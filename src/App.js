@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import RestaurantInput from './components/RestaurantInput';
 import Restaurants from './components/Restaurants';
+import { connect } from 'react-redux' 
 
-export class App extends Component {
+
+class App extends Component {
   render() {
     return (
       <div className="App">
@@ -13,4 +15,4 @@ export class App extends Component {
   }
 };
 
-export default App;
+export default connect(state => ({ restuarants: state.restuarants}))(App);
